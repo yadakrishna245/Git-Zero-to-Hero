@@ -1,0 +1,90 @@
+# =============================================================================
+# Python .gitignore
+# =============================================================================
+
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+ENV/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+.eggs/
+sdist/
+wheels/
+
+# Install
+*.whl
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+nosetests.xml
+coverage.xml
+*.cover
+
+# Type checking
+.mypy_cache/
+.pytype/
+.pyre/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+.env.local
+*.env
+
+# Databases
+*.db
+*.sqlite3
+
+# Logs
+*.log
+logs/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Documentation builds
+docs/_build/
+site/
+
+# Scrapy
+.scrapy/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Temporary
+tmp/
+temp/
+*.tmp

@@ -24,6 +24,7 @@
   <a href="git-advanced.md">🚀 Advanced</a> •
   <a href="github-gitlab-guide.md">🌐 GitHub/GitLab</a> •
   <a href="git-troubleshooting.md">🔥 Troubleshooting</a> •
+  <a href="git-security.md">🔒 Security</a> •
   <a href="git-interview-questions.md">💼 Interview Prep</a>
 </p>
 
@@ -50,8 +51,21 @@ git push -u origin main
 
 ---
 
+## 🗺️ How to Use This Repo
+
+| Your Level | Start Here |
+|---|---|
+| 🟢 **Beginner** | Read this README top-to-bottom → then [Branching](git-branching.md) → [Commands](git-commands-cheatsheet.md) |
+| 🟡 **Intermediate** | Jump to [Workflows](git-workflows.md) → [Troubleshooting](git-troubleshooting.md) → [GitHub/GitLab](github-gitlab-guide.md) |
+| 🔴 **Advanced** | Go straight to [Internals](git-internals.md) → [Advanced](git-advanced.md) → [Security](git-security.md) |
+| 💼 **Interview Prep** | [70+ Interview Questions](git-interview-questions.md) with answers |
+| 📋 **Quick Reference** | [Commands Cheatsheet](git-commands-cheatsheet.md) + [Examples](examples/) |
+
+---
+
 ## 📑 Table of Contents
 
+- [How to Use This Repo](#️-how-to-use-this-repo)
 - [Quick Start](#-quick-start-30-seconds)
 - [What is Git](#what-is-git)
 - [Why Git](#why-git)
@@ -392,7 +406,9 @@ git pull origin main
 | [🚀 Advanced Techniques](git-advanced.md) | Interactive rebase, bisect, hooks, LFS, worktrees |
 | [🌐 GitHub & GitLab](github-gitlab-guide.md) | Actions, CI/CD, PRs, platform comparison |
 | [🔥 Troubleshooting](git-troubleshooting.md) | 20 common problems with exact solutions |
+| [🔒 Security](git-security.md) | SSH keys, GPG signing, secret scanning, credential management |
 | [💼 Interview Questions](git-interview-questions.md) | 70+ questions from beginner to advanced |
+| [📂 Examples](examples/) | Copy-paste .gitconfig, hooks, workflows, .gitignore templates |
 
 ---
 

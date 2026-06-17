@@ -1,0 +1,79 @@
+# =============================================================================
+# Java .gitignore
+# =============================================================================
+
+# Compiled class files
+*.class
+
+# Build output
+target/
+build/
+out/
+bin/
+
+# Package files
+*.jar
+*.war
+*.ear
+*.nar
+
+# Log files
+*.log
+logs/
+
+# Maven
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Gradle
+.gradle/
+**/build/
+!src/**/build/
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# IDEs
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse
+.classpath
+.project
+.settings/
+.factorypath
+
+# VS Code
+.vscode/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/nbdist/
+/nb-configuration.xml
+
+# OS files
+.DS_Store
+Thumbs.db
+*~
+*.swp
+
+# Environment
+.env
+*.env
+
+# Spring Boot
+application-local.properties
+application-local.yml
+
+# Temporary
+tmp/
+temp/

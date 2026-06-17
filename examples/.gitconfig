@@ -1,0 +1,164 @@
+# =============================================================================
+# Recommended Git Configuration (~/.gitconfig)
+# Copy this file to your home directory and customize the [user] section.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# User Identity — REQUIRED: Replace with your actual name and email
+# -----------------------------------------------------------------------------
+[user]
+    name = Your Name
+    email = your.email@example.com
+
+# -----------------------------------------------------------------------------
+# Core Settings
+# -----------------------------------------------------------------------------
+[core]
+    # Line ending handling: input on macOS/Linux, true on Windows
+    autocrlf = true
+    # Default editor for commit messages (change to your preference)
+    editor = code --wait
+    # Pager for log/diff output
+    pager = less -FRX
+    # Speed up commands involving untracked files
+    untrackedCache = true
+    # Prevent issues with long file paths on Windows
+    longpaths = true
+
+# -----------------------------------------------------------------------------
+# Aliases — Shortcuts for common Git commands
+# -----------------------------------------------------------------------------
+[alias]
+    # Status and info
+    st = status -sb
+    last = log -1 HEAD --stat
+    info = remote show origin
+
+    # Branching
+    co = checkout
+    br = branch -v
+    bra = branch -a -v
+    sw = switch
+    newbr = checkout -b
+
+    # Logging
+    lg = log --oneline --graph --decorate -20
+    graph = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
+    hist = log --pretty=format:'%C(yellow)%h%Creset %ad | %s%d [%an]' --graph --date=short
+    today = log --since=midnight --oneline --no-merges
+
+    # Staging and committing
+    unstage = reset HEAD --
+    amend = commit --amend --no-edit
+    undo = reset --soft HEAD~1
+    discard = checkout --
+    wip = !git add -A && git commit -m 'WIP: work in progress [skip ci]'
+
+    # Diff
+    df = diff --word-diff
+    staged = diff --cached
+    both = diff HEAD
+
+    # Collaboration
+    contributors = shortlog -sn --no-merges
+    who = shortlog -sn --all
+    sync = !git fetch --all --prune && git pull --rebase
+
+    # Cleanup
+    cleanup = !git branch --merged | grep -v '\\*\\|main\\|master\\|develop' | xargs -n 1 git branch -d
+    fresh = !git fetch --all && git reset --hard origin/$(git branch --show-current)
+
+    # Stash
+    save = stash push -m
+    pop = stash pop
+    stashes = stash list
+
+# -----------------------------------------------------------------------------
+# Color Settings — Make Git output easier to read
+# -----------------------------------------------------------------------------
+[color]
+    ui = auto
+    branch = auto
+    diff = auto
+    status = auto
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = red
+
+# -----------------------------------------------------------------------------
+# Push/Pull Defaults
+# -----------------------------------------------------------------------------
+[push]
+    # Push only the current branch to its upstream
+    default = current
+    # Automatically push tags that point to pushed commits
+    followTags = true
+    # Auto-setup remote tracking
+    autoSetupRemote = true
+
+[pull]
+    # Rebase instead of merge when pulling (cleaner history)
+    rebase = true
+
+[fetch]
+    # Remove remote-tracking refs that no longer exist on remote
+    prune = true
+
+# -----------------------------------------------------------------------------
+# Merge and Diff Tools
+# -----------------------------------------------------------------------------
+[merge]
+    # Use VS Code as merge tool (change to your preference)
+    tool = vscode
+    # Show common ancestor in conflict markers
+    conflictstyle = diff3
+
+[mergetool "vscode"]
+    cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+
+[diff]
+    # Use VS Code as diff tool
+    tool = vscode
+    # Detect renames and copies
+    renames = copies
+
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+
+# -----------------------------------------------------------------------------
+# Rebase Settings
+# -----------------------------------------------------------------------------
+[rebase]
+    # Auto-stash before rebase and pop after
+    autoStash = true
+    # Auto-squash fixup commits
+    autoSquash = true
+
+# -----------------------------------------------------------------------------
+# Credential Helper
+# -----------------------------------------------------------------------------
+[credential]
+    # Windows: use Windows Credential Manager
+    helper = manager
+    # macOS alternative: helper = osxkeychain
+    # Linux alternative: helper = cache --timeout=3600
+
+# -----------------------------------------------------------------------------
+# Init Settings
+# -----------------------------------------------------------------------------
+[init]
+    # Default branch name for new repos
+    defaultBranch = main
