@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350">
+<foreignObject width="100%" height="100%">
+<div xmlns="http://www.w3.org/1999/xhtml">
+<style>
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@keyframes flowDown { 0% { opacity: 0.3; transform: translateY(-3px); } 50% { opacity: 1; } 100% { opacity: 0.3; transform: translateY(3px); } }
+.container { background: #1e293b; border-radius: 12px; padding: 24px; min-height: 310px; display: flex; flex-direction: column; align-items: center; }
+.title { color: #f97316; font-size: 20px; font-weight: bold; margin-bottom: 20px; animation: fadeIn 0.8s ease; }
+.flow { display: flex; align-items: flex-start; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.col { display: flex; flex-direction: column; align-items: center; gap: 8px; animation: fadeIn 1s ease backwards; }
+.col:nth-child(1) { animation-delay: 0.2s; }
+.col:nth-child(2) { animation-delay: 0.5s; }
+.col:nth-child(3) { animation-delay: 0.8s; }
+.col:nth-child(4) { animation-delay: 1.1s; }
+.col:nth-child(5) { animation-delay: 1.4s; }
+.box { padding: 14px 18px; border-radius: 8px; color: white; font-weight: 600; font-size: 12px; text-align: center; min-width: 110px; }
+.working { background: #f97316; }
+.stash { background: #8b5cf6; animation: bounce 2s ease-in-out infinite; }
+.switch-box { background: #3b82f6; }
+.pop { background: #10b981; }
+.continue { background: #ec4899; }
+.arrow { color: #94a3b8; font-size: 18px; animation: flowDown 1.5s ease-in-out infinite; margin: 4px 0; }
+.cmd { color: #94a3b8; font-size: 10px; font-family: monospace; margin-top: 4px; }
+.harrow { color: #94a3b8; font-size: 20px; align-self: center; margin-top: 30px; }
+</style>
+<div style="font-family: system-ui; padding: 20px;">
+<div class="container">
+<div class="title">Git Stash Flow</div>
+<div class="flow">
+<div class="col">
+<div class="box working">Uncommitted<br/>Changes</div>
+<div class="cmd">dirty working dir</div>
+</div>
+<div class="col"><span class="harrow">→</span></div>
+<div class="col">
+<div class="box stash">git stash</div>
+<div class="arrow">↓</div>
+<div class="box switch-box">Switch Branch<br/>Fix Bug</div>
+<div class="cmd">git switch hotfix</div>
+</div>
+<div class="col"><span class="harrow">→</span></div>
+<div class="col">
+<div class="box pop">git stash pop</div>
+<div class="arrow">↓</div>
+<div class="box continue">Continue<br/>Working ✓</div>
+<div class="cmd">changes restored</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</foreignObject>
+</svg>

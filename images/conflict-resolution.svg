@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+<foreignObject width="100%" height="100%">
+<div xmlns="http://www.w3.org/1999/xhtml">
+<style>
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes flash { 0%, 100% { background: #ef4444; } 50% { background: #dc2626; } }
+@keyframes resolve { 0%, 70% { background: #ef4444; } 100% { background: #10b981; } }
+.container { background: #1e293b; border-radius: 12px; padding: 24px; min-height: 340px; display: flex; flex-direction: column; align-items: center; }
+.title { color: #f97316; font-size: 20px; font-weight: bold; margin-bottom: 16px; animation: fadeIn 0.8s ease; }
+.row { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 12px; width: 100%; flex-wrap: wrap; }
+.box { padding: 12px 16px; border-radius: 8px; color: white; font-weight: 600; font-size: 12px; text-align: center; animation: fadeIn 0.8s ease backwards; min-width: 100px; }
+.branch-a { background: #3b82f6; animation-delay: 0.2s; }
+.branch-b { background: #8b5cf6; animation-delay: 0.4s; }
+.conflict { animation: flash 2s ease-in-out infinite; color: white; padding: 12px 16px; border-radius: 8px; font-weight: 600; font-size: 12px; }
+.arrow { color: #94a3b8; font-size: 16px; }
+.code-block { background: #0f172a; border-radius: 8px; padding: 14px; font-family: monospace; font-size: 11px; color: #e2e8f0; width: 90%; max-width: 500px; margin: 8px 0; animation: fadeIn 1s ease backwards; animation-delay: 0.8s; line-height: 1.6; }
+.ours { color: #3b82f6; }
+.theirs { color: #8b5cf6; }
+.marker { color: #ef4444; }
+.steps { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; justify-content: center; }
+.step { background: #10b981; padding: 8px 14px; border-radius: 6px; color: white; font-size: 11px; font-weight: 600; animation: fadeIn 0.6s ease backwards; }
+.step:nth-child(1) { animation-delay: 1.2s; }
+.step:nth-child(2) { animation-delay: 1.4s; }
+.step:nth-child(3) { animation-delay: 1.6s; }
+</style>
+<div style="font-family: system-ui; padding: 16px;">
+<div class="container">
+<div class="title">Merge Conflict Resolution</div>
+<div class="row">
+<div class="box branch-a">feature/login</div>
+<span class="arrow">──→</span>
+<div class="conflict">⚠️ CONFLICT</div>
+<span class="arrow">←──</span>
+<div class="box branch-b">feature/auth</div>
+</div>
+<div class="code-block">
+<span class="marker">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD (yours)</span><br/>
+<span class="ours">function login(user) { ... }</span><br/>
+<span class="marker">=======</span><br/>
+<span class="theirs">function authenticate(user) { ... }</span><br/>
+<span class="marker">&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature/auth (theirs)</span>
+</div>
+<div class="steps">
+<div class="step">1. Edit file — pick changes</div>
+<div class="step">2. git add resolved_file</div>
+<div class="step">3. git commit ✓</div>
+</div>
+</div>
+</div>
+</div>
+</foreignObject>
+</svg>

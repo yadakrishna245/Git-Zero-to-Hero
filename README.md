@@ -2,24 +2,57 @@
   <img src="images/git-workflow.svg" alt="Git Workflow Animation" width="700"/>
 </p>
 
-<h1 align="center">Git Zero to Hero</h1>
+<h1 align="center">🚀 Git Zero to Hero</h1>
 
 <p align="center">
-  <strong>A complete guide to mastering Git from the ground up</strong>
+  <strong>The most complete Git guide on GitHub — from first commit to production workflows</strong>
 </p>
 
 <p align="center">
-  <a href="https://github.com/krishna-yada/Git-Zero-to-Hero/stargazers"><img src="https://img.shields.io/github/stars/krishna-yada/Git-Zero-to-Hero?style=flat-square&color=f97316" alt="Stars"/></a>
-  <a href="https://github.com/krishna-yada/Git-Zero-to-Hero/network/members"><img src="https://img.shields.io/github/forks/krishna-yada/Git-Zero-to-Hero?style=flat-square&color=3b82f6" alt="Forks"/></a>
-  <a href="https://github.com/krishna-yada/Git-Zero-to-Hero/pulls"><img src="https://img.shields.io/badge/PRs-welcome-10b981?style=flat-square" alt="PRs Welcome"/></a>
+  <a href="https://github.com/yadakrishna245/Git-Zero-to-Hero/stargazers"><img src="https://img.shields.io/github/stars/yadakrishna245/Git-Zero-to-Hero?style=flat-square&color=f97316" alt="Stars"/></a>
+  <a href="https://github.com/yadakrishna245/Git-Zero-to-Hero/network/members"><img src="https://img.shields.io/github/forks/yadakrishna245/Git-Zero-to-Hero?style=flat-square&color=3b82f6" alt="Forks"/></a>
+  <a href="https://github.com/yadakrishna245/Git-Zero-to-Hero/pulls"><img src="https://img.shields.io/badge/PRs-welcome-10b981?style=flat-square" alt="PRs Welcome"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-8b5cf6?style=flat-square" alt="License MIT"/></a>
-  <img src="https://komarev.com/ghpvc/?username=krishna-yada&label=visitors&color=f97316&style=flat-square" alt="Visitors"/>
+  <img src="https://komarev.com/ghpvc/?username=yadakrishna245-git&label=visitors&color=f97316&style=flat-square" alt="Visitors"/>
 </p>
+
+<p align="center">
+  <a href="git-branching.md">🌳 Branching</a> •
+  <a href="git-commands-cheatsheet.md">⚡ Commands</a> •
+  <a href="git-internals.md">🔧 Internals</a> •
+  <a href="git-workflows.md">🤝 Workflows</a> •
+  <a href="git-advanced.md">🚀 Advanced</a> •
+  <a href="github-gitlab-guide.md">🌐 GitHub/GitLab</a> •
+  <a href="git-troubleshooting.md">🔥 Troubleshooting</a> •
+  <a href="git-interview-questions.md">💼 Interview Prep</a>
+</p>
+
+---
+
+## ⚡ Quick Start (30 seconds)
+
+```bash
+# Install Git → https://git-scm.com
+git config --global user.name "Your Name"
+git config --global user.email "you@email.com"
+
+# Start a project
+git init my-project && cd my-project
+echo "# Hello" > README.md
+git add . && git commit -m "Initial commit"
+
+# Push to GitHub
+git remote add origin https://github.com/YOU/my-project.git
+git push -u origin main
+```
+
+**That's it. You're using Git.** Now dive deeper 👇
 
 ---
 
 ## 📑 Table of Contents
 
+- [Quick Start](#-quick-start-30-seconds)
 - [What is Git](#what-is-git)
 - [Why Git](#why-git)
 - [Installation](#installation)
@@ -42,7 +75,7 @@ Key characteristics:
 - **Integrity** — Every file and commit is checksummed with SHA-1
 - **Branching** — Lightweight branches enable parallel workflows
 
-[⬆ Back to top](#-table-of-contents)
+[🔝 Back to top](#-quick-start-30-seconds)
 
 ---
 
@@ -62,7 +95,7 @@ Git gives you:
 - Effortless collaboration via remotes
 - Industry-standard workflow (GitHub, GitLab, Bitbucket)
 
-[⬆ Back to top](#-table-of-contents)
+[🔝 Back to top](#-quick-start-30-seconds)
 
 ---
 
@@ -105,7 +138,7 @@ Verify installation:
 git --version
 ```
 
-[⬆ Back to top](#-table-of-contents)
+[🔝 Back to top](#-quick-start-30-seconds)
 
 ---
 
@@ -134,7 +167,7 @@ git config --global color.ui auto
 git config --list
 ```
 
-[⬆ Back to top](#-table-of-contents)
+[🔝 Back to top](#-quick-start-30-seconds)
 
 ---
 
@@ -182,7 +215,7 @@ Working Directory  →  Staging Area  →  Repository
    (edit files)       (git add)       (git commit)
 ```
 
-[⬆ Back to top](#-table-of-contents)
+[🔝 Back to top](#-quick-start-30-seconds)
 
 ---
 
@@ -256,7 +289,7 @@ git reset --soft HEAD~1
 git reset --hard HEAD~1
 ```
 
-[⬆ Back to top](#-table-of-contents)
+[🔝 Back to top](#-quick-start-30-seconds)
 
 ---
 
@@ -276,13 +309,9 @@ git branch
 git branch feature-login
 
 # Switch to a branch
-git checkout feature-login
-# Or (Git 2.23+):
 git switch feature-login
 
 # Create and switch in one step
-git checkout -b feature-login
-# Or:
 git switch -c feature-login
 ```
 
@@ -290,7 +319,7 @@ git switch -c feature-login
 
 ```bash
 # Switch to main branch
-git checkout main
+git switch main
 
 # Merge feature branch into main
 git merge feature-login
@@ -303,7 +332,7 @@ git branch -d feature-login
   <img src="images/merge-vs-rebase.svg" alt="Merge vs Rebase" width="700"/>
 </p>
 
-[⬆ Back to top](#-table-of-contents)
+[🔝 Back to top](#-quick-start-30-seconds)
 
 ---
 
@@ -348,7 +377,7 @@ git switch main
 git pull origin main
 ```
 
-[⬆ Back to top](#-table-of-contents)
+[🔝 Back to top](#-quick-start-30-seconds)
 
 ---
 
@@ -356,19 +385,37 @@ git pull origin main
 
 | Guide | Description |
 |---|---|
-| [Branching Strategies](docs/branching-strategies.md) | Git Flow, GitHub Flow, Trunk-based |
-| [Merge vs Rebase](docs/merge-vs-rebase.md) | When to use each approach |
-| [Git Internals](docs/git-internals.md) | Blobs, trees, commits, and refs |
-| [Undoing Changes](docs/undoing-changes.md) | Reset, revert, checkout, and restore |
-| [Git Hooks](docs/git-hooks.md) | Automate workflows with hooks |
-| [Collaboration](docs/collaboration.md) | PRs, code review, conflict resolution |
-| [Advanced Commands](docs/advanced-commands.md) | Stash, cherry-pick, bisect, reflog |
-| [Git Aliases](docs/git-aliases.md) | Productivity shortcuts |
-| [Cheat Sheet](docs/cheatsheet.md) | Quick reference card |
+| [🌳 Branching Strategies](git-branching.md) | GitFlow, GitHub Flow, Trunk-based, merge vs rebase |
+| [⚡ Commands Cheatsheet](git-commands-cheatsheet.md) | Every Git command with flags and examples |
+| [🔧 Git Internals](git-internals.md) | Blobs, trees, commits, refs, packfiles |
+| [🤝 Team Workflows](git-workflows.md) | Solo, team, enterprise, open source patterns |
+| [🚀 Advanced Techniques](git-advanced.md) | Interactive rebase, bisect, hooks, LFS, worktrees |
+| [🌐 GitHub & GitLab](github-gitlab-guide.md) | Actions, CI/CD, PRs, platform comparison |
+| [🔥 Troubleshooting](git-troubleshooting.md) | 20 common problems with exact solutions |
+| [💼 Interview Questions](git-interview-questions.md) | 70+ questions from beginner to advanced |
+
+---
+
+## 📊 Star History
+
+<a href="https://star-history.com/#yadakrishna245/Git-Zero-to-Hero&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=yadakrishna245/Git-Zero-to-Hero&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=yadakrishna245/Git-Zero-to-Hero&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=yadakrishna245/Git-Zero-to-Hero&type=Date" />
+  </picture>
+</a>
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ---
 
 <p align="center">
-  Made with ❤️ for the Git community<br/>
-  <a href="#-table-of-contents">⬆ Back to top</a>
+  Made with ❤️ by <a href="https://github.com/yadakrishna245">Krishna Yada</a><br/>
+  If this helped you, give it a ⭐ — it motivates me to add more content!<br/><br/>
+  <a href="#-quick-start-30-seconds">🔝 Back to top</a>
 </p>
