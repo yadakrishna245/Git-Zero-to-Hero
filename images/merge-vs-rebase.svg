@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+<foreignObject width="100%" height="100%">
+<div xmlns="http://www.w3.org/1999/xhtml">
+<style>
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+.container { background: #1e293b; border-radius: 12px; padding: 24px; min-height: 360px; display: flex; flex-direction: column; gap: 16px; }
+.title { color: #f97316; font-size: 22px; font-weight: bold; text-align: center; animation: fadeIn 1s ease; }
+.comparison { display: flex; gap: 16px; flex: 1; }
+.panel { flex: 1; background: rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.panel-title { color: white; font-size: 16px; font-weight: 700; text-align: center; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.commit-list { display: flex; flex-direction: column; gap: 6px; }
+.commit-row { display: flex; align-items: center; gap: 8px; animation: slideDown 0.5s ease backwards; }
+.commit-row:nth-child(1) { animation-delay: 0.2s; }
+.commit-row:nth-child(2) { animation-delay: 0.4s; }
+.commit-row:nth-child(3) { animation-delay: 0.6s; }
+.commit-row:nth-child(4) { animation-delay: 0.8s; }
+.commit-row:nth-child(5) { animation-delay: 1.0s; }
+.dot { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; }
+.d-green { background: #10b981; }
+.d-blue { background: #3b82f6; }
+.d-purple { background: #8b5cf6; }
+.line { flex: 1; height: 2px; background: rgba(255,255,255,0.2); }
+.clabel { color: #94a3b8; font-size: 11px; min-width: 70px; }
+.note { color: #94a3b8; font-size: 11px; text-align: center; margin-top: auto; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.1); }
+.highlight { color: #f97316; font-weight: 600; }
+</style>
+<div style="font-family: system-ui; padding: 20px;">
+<div class="container">
+<div class="title">Merge vs Rebase</div>
+<div class="comparison">
+<div class="panel">
+<div class="panel-title" style="color:#3b82f6;">git merge</div>
+<div class="commit-list">
+<div class="commit-row"><div class="dot d-green"></div><div class="line"></div><span class="clabel">main: C1</span></div>
+<div class="commit-row"><div class="dot d-green"></div><div class="line"></div><span class="clabel">main: C2</span></div>
+<div class="commit-row"><div class="dot d-blue"></div><div class="line"></div><span class="clabel">feat: C3</span></div>
+<div class="commit-row"><div class="dot d-blue"></div><div class="line"></div><span class="clabel">feat: C4</span></div>
+<div class="commit-row"><div class="dot d-purple"></div><div class="line"></div><span class="clabel highlight">Merge commit</span></div>
+</div>
+<div class="note">Preserves full history<br/>Creates merge commit</div>
+</div>
+<div class="panel">
+<div class="panel-title" style="color:#10b981;">git rebase</div>
+<div class="commit-list">
+<div class="commit-row"><div class="dot d-green"></div><div class="line"></div><span class="clabel">main: C1</span></div>
+<div class="commit-row"><div class="dot d-green"></div><div class="line"></div><span class="clabel">main: C2</span></div>
+<div class="commit-row"><div class="dot d-green"></div><div class="line"></div><span class="clabel">feat: C3'</span></div>
+<div class="commit-row"><div class="dot d-green"></div><div class="line"></div><span class="clabel">feat: C4'</span></div>
+</div>
+<div class="note">Linear history<br/>Rewrites commits</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</foreignObject>
+</svg>

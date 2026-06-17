@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+<foreignObject width="100%" height="100%">
+<div xmlns="http://www.w3.org/1999/xhtml">
+<style>
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes grow { from { width: 0; } to { width: 100%; } }
+@keyframes pop { 0% { transform: scale(0); } 80% { transform: scale(1.1); } 100% { transform: scale(1); } }
+.container { background: #1e293b; border-radius: 12px; padding: 30px; min-height: 360px; display: flex; flex-direction: column; gap: 20px; }
+.title { color: #f97316; font-size: 22px; font-weight: bold; text-align: center; animation: fadeIn 1s ease; }
+.branch-row { display: flex; align-items: center; gap: 10px; }
+.label { color: white; font-size: 13px; font-weight: 600; min-width: 80px; text-align: right; }
+.track { flex: 1; display: flex; align-items: center; gap: 8px; padding: 8px; border-radius: 6px; }
+.main-track { background: rgba(16,185,129,0.15); border: 1px solid #10b981; }
+.feat-track { background: rgba(59,130,246,0.15); border: 1px solid #3b82f6; }
+.fix-track { background: rgba(249,115,22,0.15); border: 1px solid #f97316; }
+.commit { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; font-weight: bold; animation: pop 0.5s ease backwards; }
+.c-main { background: #10b981; }
+.c-feat { background: #3b82f6; }
+.c-fix { background: #f97316; }
+.commit:nth-child(2) { animation-delay: 0.3s; }
+.commit:nth-child(3) { animation-delay: 0.6s; }
+.commit:nth-child(4) { animation-delay: 0.9s; }
+.commit:nth-child(5) { animation-delay: 1.2s; }
+.commit:nth-child(6) { animation-delay: 1.5s; }
+.merge-arrow { color: #8b5cf6; font-size: 16px; animation: fadeIn 1s ease 1.8s backwards; }
+.legend { display: flex; gap: 16px; justify-content: center; margin-top: 10px; }
+.legend-item { display: flex; align-items: center; gap: 6px; color: #94a3b8; font-size: 12px; }
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+</style>
+<div style="font-family: system-ui; padding: 20px;">
+<div class="container">
+<div class="title">Git Branching</div>
+<div class="branch-row">
+<span class="label" style="color:#10b981;">main</span>
+<div class="track main-track">
+<div class="commit c-main">M1</div>
+<div class="commit c-main">M2</div>
+<div class="commit c-main">M3</div>
+<div class="commit c-main" style="animation-delay:1.8s;">M4</div>
+<div class="commit c-main" style="animation-delay:2.1s;">M5</div>
+</div>
+</div>
+<div class="branch-row">
+<span class="label" style="color:#3b82f6;">feature</span>
+<div class="track feat-track">
+<div class="commit c-feat">F1</div>
+<div class="commit c-feat">F2</div>
+<div class="commit c-feat">F3</div>
+<span class="merge-arrow">↗ merge</span>
+</div>
+</div>
+<div class="branch-row">
+<span class="label" style="color:#f97316;">hotfix</span>
+<div class="track fix-track">
+<div class="commit c-fix">H1</div>
+<span class="merge-arrow">↗ merge</span>
+</div>
+</div>
+<div class="legend">
+<div class="legend-item"><div class="dot" style="background:#10b981;"></div>Main commits</div>
+<div class="legend-item"><div class="dot" style="background:#3b82f6;"></div>Feature commits</div>
+<div class="legend-item"><div class="dot" style="background:#f97316;"></div>Hotfix commits</div>
+<div class="legend-item"><div class="dot" style="background:#8b5cf6;"></div>Merge point</div>
+</div>
+</div>
+</div>
+</div>
+</foreignObject>
+</svg>
